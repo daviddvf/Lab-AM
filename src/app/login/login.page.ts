@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../interface/usuario'; 
 import { AutenticacionFireService } from '../service/autenticacion-fire.service';
 import { Router } from '@angular/router';
+import { MenuService } from '../service/menu.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginPage implements OnInit {
 
   constructor(
     private router: Router,
-    private autSvc: AutenticacionFireService
+    private autSvc: AutenticacionFireService,
+    private menuService: MenuService
   ) { }
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class LoginPage implements OnInit {
     this.autSvc.onLogin(this.user).then((user:any)=>{
       if(user!=null && user.code ==undefined){
         console.log('Successfully logged in!');
-
+        this.menuService.setTitle("presupuesto");
         this.router.navigate(['/presupuesto']);
       }
       else{

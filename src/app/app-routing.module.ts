@@ -5,7 +5,7 @@ import { AutenticGuardService } from './service/autentic-guard.service';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canActivate: [AutenticGuardService]
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'alumnos',
-    loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule), canActivate: [AutenticGuardService]
+    loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   },
   {
     path: 'alumnos',
@@ -51,6 +51,10 @@ const routes: Routes = [
   {
     path: 'logout',
     loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
 ];
 

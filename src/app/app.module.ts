@@ -8,8 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ComponenteMenuComponent } from './componente-menu/componente-menu.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ComponenteMenuComponent],
   imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [ HttpClientModule, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
